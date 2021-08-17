@@ -17,8 +17,14 @@ public class FollowCam : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Z)) _angleY -= _angularSpeed;
-        if (Input.GetKey(KeyCode.X)) _angleY += _angularSpeed;
+        if (Input.GetKey(KeyCode.Z))
+        {
+            _angleY -= _angularSpeed;
+        }
+        if (Input.GetKey(KeyCode.X))
+        { 
+            _angleY += _angularSpeed; 
+        }
 
         transform.position = _target.transform.position;
         transform.rotation = Quaternion.Euler(0, _angleY, 0);

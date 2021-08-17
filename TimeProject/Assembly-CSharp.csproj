@@ -57,12 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MovementController.cs" />
+    <Compile Include="Assets\Scripts\MovementCharacteristics.cs" />
     <Compile Include="Assets\Scripts\PointInTime.cs" />
     <Compile Include="Assets\Scripts\TimeBody.cs" />
     <Compile Include="Assets\Scripts\FollowCam.cs" />
-    <Compile Include="Assets\Scripts\RotationPlayer.cs" />
     <Compile Include="Assets\Scripts\AnimationController.cs" />
-    <Compile Include="Assets\Scripts\MovementCharacteristics.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

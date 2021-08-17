@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,15 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     private Animator animator;
+
+    private enum State
+    {
+        Jump = 1,
+        None = 0,
+        Walk = 1,
+        Sprint = 2 
+
+    }
     private int _state;
     private int _stateBack;
     private int _stateRight;
@@ -15,6 +25,8 @@ public class AnimationController : MonoBehaviour
     private int _stateBackLeft;
     private int _stateBackRight;
 
+    int StateReqId = Convert.ToInt32("State".GetHashCode());
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -23,49 +35,83 @@ public class AnimationController : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.W))
+        {
             Move(KeyCode.W, ref _state);
+        }
         else
-            _state = 0;
+        {
+            _state = (int)State.None ;
+        }
 
         if (Input.GetKey(KeyCode.S))
+        {
             Move(KeyCode.S, ref _stateBack);
+        }
         else
-            _stateBack = 0;
+        {
+            _stateBack = (int)State.None;
+        }
 
         if (Input.GetKey(KeyCode.D))
+        {
             Move(KeyCode.D, ref _stateRight);
+        }
         else
-            _stateRight = 0;
+        {
+            _stateRight = (int)State.None;
+        }
 
         if (Input.GetKey(KeyCode.A))
+        {
             Move(KeyCode.A, ref _stateLeft);
+        }
         else
-            _stateLeft = 0;
+        { 
+            _stateLeft = (int)State.None;
+        }
 
         if (Input.GetKey(KeyCode.Space))
+        {
             Jump();
+        }
 
         if (Input.GetKey(KeyCode.W) & Input.GetKey(KeyCode.A))
+        {
             Move(KeyCode.W, KeyCode.A, ref _stateForLeft);
+        }
         else
-            _stateForLeft = 0;
+        {
+            _stateForLeft = (int)State.None;
+        }
 
         if (Input.GetKey(KeyCode.W) & Input.GetKey(KeyCode.D))
+        {
             Move(KeyCode.W, KeyCode.D, ref _stateForRight);
+        }
         else
-            _stateForRight = 0;
+        {
+            _stateForRight = (int)State.None;
+        }
 
         if (Input.GetKey(KeyCode.S) & Input.GetKey(KeyCode.A))
+        {
             Move(KeyCode.S, KeyCode.A, ref _stateBackLeft);
+        }
         else
-            _stateBackLeft = 0;
+        {
+            _stateBackLeft = (int)State.None;
+        }
 
         if (Input.GetKey(KeyCode.S) & Input.GetKey(KeyCode.D))
+        {
             Move(KeyCode.S, KeyCode.D, ref _stateBackRight);
+        }
         else
-            _stateBackRight = 0;
+        {
+            _stateBackRight = (int)State.None;
+        }
 
-        animator.SetInteger("State", _state);
+        animator.SetInteger(StateReqId, _state);
         animator.SetInteger("StateBack", _stateBack);
         animator.SetInteger("StateRight", _stateRight);
         animator.SetInteger("StateLeft", _stateLeft);
@@ -77,28 +123,14 @@ public class AnimationController : MonoBehaviour
     }
     
 
-
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            _stateJump = 1;
-        }
-        else
-        {
-            _stateJump = 0;
-        }
-    } 
+        _stateJump = Input.GetKeyDown(KeyCode.Space) ? (int)State.Jump : (int)State.None;
+    }
+
     private void Sprint(ref int state)
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            state = 2;
-        }
-        else
-        {
-            state = 1;
-        }
+        state = Input.GetKey(KeyCode.LeftShift) ? (int)State.Sprint : (int)State.Walk; ;
     }
     private void Move(KeyCode key,ref int state)
     {
