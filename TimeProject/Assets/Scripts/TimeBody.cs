@@ -6,7 +6,8 @@ public class TimeBody : MonoBehaviour
 {
     private bool isRewinding = false;
     [SerializeField] private float rewindDuration = 5f;
-    [SerializeField] List<PointInTime> pointsInTime;
+    
+    List<PointInTime> pointsInTime;
     Rigidbody _rb;
 
     private void Start()
