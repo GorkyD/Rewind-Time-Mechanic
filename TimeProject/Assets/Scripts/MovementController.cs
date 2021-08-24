@@ -77,7 +77,7 @@ public class MovementController : MonoBehaviour
     private void Jump()
     {
         if (Input.GetButtonDown(Str_Jump))
-        {;
+        {
             _globalDirection.y += _characteristics.JumpForce;
         }
     }
