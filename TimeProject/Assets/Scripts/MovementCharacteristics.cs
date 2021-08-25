@@ -12,6 +12,7 @@ using UnityEngine;
         [SerializeField] private float _angularSpeed = 150f;
         [SerializeField] private float _gravity = 15f;
         [SerializeField] private float _jumpForce = 7f;
+        
         public bool VisibleCursor => _visibleCursor;
         public float MovementSpeed => _movementSpeed;
         public float RunSpeed => _runSpeed;
