@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    private Animator animator;
+    private Animator _animator;
 
     private enum State
     {
@@ -25,37 +22,37 @@ public class AnimationController : MonoBehaviour
     private int _stateBackLeft;
     private int _stateBackRight;
 
-    protected const string StateAnimationTrigger = "State";
-    private static readonly int _State = Animator.StringToHash(StateAnimationTrigger);
+    private const string StateAnimationTrigger = "State";
+    private static readonly int MainState = Animator.StringToHash(StateAnimationTrigger);
 
-    protected const string StateBackAnimationTrigger = "StateBack";
-    private static readonly int _StateBack = Animator.StringToHash(StateBackAnimationTrigger);
+    private const string StateBackAnimationTrigger = "StateBack";
+    private static readonly int StateBack = Animator.StringToHash(StateBackAnimationTrigger);
 
-    protected const string StateRightAnimationTrigger = "StateRight";
-    private static readonly int _StateRight = Animator.StringToHash(StateRightAnimationTrigger);
+    private const string StateRightAnimationTrigger = "StateRight";
+    private static readonly int StateRight = Animator.StringToHash(StateRightAnimationTrigger);
 
-    protected const string StateLeftAnimationTrigger = "StateLeft";
-    private static readonly int _StateLeft = Animator.StringToHash(StateLeftAnimationTrigger);
+    private const string StateLeftAnimationTrigger = "StateLeft";
+    private static readonly int StateLeft = Animator.StringToHash(StateLeftAnimationTrigger);
 
-    protected const string StateJumpAnimationTrigger = "StateJump";
-    private static readonly int _StateJump = Animator.StringToHash(StateJumpAnimationTrigger);
+    private const string StateJumpAnimationTrigger = "StateJump";
+    private static readonly int StateJump = Animator.StringToHash(StateJumpAnimationTrigger);
 
-    protected const string StateForwardLeftAnimationTrigger = "StateForwardLeft";
-    private static readonly int _StateForwardLeft = Animator.StringToHash(StateForwardLeftAnimationTrigger);
+    private const string StateForwardLeftAnimationTrigger = "StateForwardLeft";
+    private static readonly int StateForwardLeft = Animator.StringToHash(StateForwardLeftAnimationTrigger);
 
-    protected const string StateForwardRightAnimationTrigger = "StateForwardRight";
-    private static readonly int _StateForwardRight = Animator.StringToHash(StateForwardRightAnimationTrigger);
+    private const string StateForwardRightAnimationTrigger = "StateForwardRight";
+    private static readonly int StateForwardRight = Animator.StringToHash(StateForwardRightAnimationTrigger);
 
-    protected const string StateBackLeftAnimationTrigger = "StateBackLeft";
-    private static readonly int _StateBackLeft = Animator.StringToHash(StateBackLeftAnimationTrigger);
+    private const string StateBackLeftAnimationTrigger = "StateBackLeft";
+    private static readonly int StateBackLeft = Animator.StringToHash(StateBackLeftAnimationTrigger);
 
-    protected const string StateBackRightAnimationTrigger = "StateBackRight";
-    private static readonly int _StateBackRight = Animator.StringToHash(StateBackRightAnimationTrigger);
+    private const string StateBackRightAnimationTrigger = "StateBackRight";
+    private static readonly int StateBackRight = Animator.StringToHash(StateBackRightAnimationTrigger);
 
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -137,15 +134,15 @@ public class AnimationController : MonoBehaviour
             _stateBackRight = (int)State.None;
         }
 
-        animator.SetInteger(_State, _state);
-        animator.SetInteger(_StateBack, _stateBack);
-        animator.SetInteger(_StateRight, _stateRight);
-        animator.SetInteger(_StateLeft, _stateLeft);
-        animator.SetInteger(_StateJump, _stateJump);
-        animator.SetInteger(_StateForwardLeft, _stateForLeft);
-        animator.SetInteger(_StateForwardRight, _stateForRight);
-        animator.SetInteger(_StateBackLeft, _stateBackLeft);
-        animator.SetInteger(_StateBackRight, _stateBackRight);
+        _animator.SetInteger(MainState, _state);
+        _animator.SetInteger(StateBack, _stateBack);
+        _animator.SetInteger(StateRight, _stateRight);
+        _animator.SetInteger(StateLeft, _stateLeft);
+        _animator.SetInteger(StateJump, _stateJump);
+        _animator.SetInteger(StateForwardLeft, _stateForLeft);
+        _animator.SetInteger(StateForwardRight, _stateForRight);
+        _animator.SetInteger(StateBackLeft, _stateBackLeft);
+        _animator.SetInteger(StateBackRight, _stateBackRight);
     }
     
 

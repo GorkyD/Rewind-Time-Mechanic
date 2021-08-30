@@ -69,7 +69,6 @@
      <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
      <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
      <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
-     <Compile Include="Assets\Scripts\MovementCharacteristics.cs" />
      <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Runtime\PostProcessingModel.cs" />
      <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
      <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
@@ -751,6 +750,12 @@
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
