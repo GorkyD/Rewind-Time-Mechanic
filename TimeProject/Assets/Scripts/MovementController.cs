@@ -1,11 +1,11 @@
 using UnityEngine;
 public class MovementController : MonoBehaviour
 {
-    public Transform playerModel;
+    [SerializeField] private Transform playerModel;
+    [SerializeField] private new Rigidbody rigidbody;
+    [SerializeField] private float speed = 3f; 
     private Transform _mainCamera;
-    public new Rigidbody rigidbody;
-    public float speed = 3f; 
- 
+    
     void Start()
     {
         if (Camera.main is { }) _mainCamera = Camera.main.transform;

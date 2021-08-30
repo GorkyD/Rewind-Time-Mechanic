@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class FollowCam : MonoBehaviour
 {
-    public Transform cameraTarget;
-    public Transform playerModel;
-    public float minimumAngle;
-    public float maximumAngle;
-    public float mouseSensitivity;
+    [SerializeField] private Transform cameraTarget;
+    [SerializeField] private Transform playerModel;
+    [SerializeField] private float minimumAngle;
+    [SerializeField] private float maximumAngle;
+    [SerializeField] private float mouseSensitivity;
     public bool stickCamera;
     void Start()
     {
