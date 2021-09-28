@@ -85,8 +85,8 @@
      <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Editor\PropertyDrawers\GetSetDrawer.cs" />
      <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Editor\Utils\CurveEditor.cs" />
      <Compile Include="Assets\Asset\Water Shaders\#NVJOB Water Shaders V2\Editor\NVWaterMaterials.cs" />
-     <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
      <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Editor\Models\VignetteModelEditor.cs" />
+     <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
      <Compile Include="Assets\Asset\Water Shaders\Example Scenes\PostProcessing\Editor\PostProcessingFactory.cs" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Unity/2020.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -673,8 +673,14 @@
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -699,12 +705,6 @@
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.cinemachine.editor">
- <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
- </Reference>
- <Reference Include="Cinemachine">
- <HintPath>D:/Git/MyProjects/TimeProject/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
